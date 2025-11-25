@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -7,11 +7,11 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const cors = require('cors');
 // const { createProxyMiddleware } = require('http-proxy-middleware');
-// const { startDb, client } = require('./database/db');
+const { startDb, client } = require('./database/db');
 
 const app = express();
 
-// startDb();
+startDb();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
